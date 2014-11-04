@@ -1,4 +1,5 @@
 ActiveAdmin.register Mission do
+  permit_params :name, :code_chantier
 
 
   # See permitted parameters documentation:
