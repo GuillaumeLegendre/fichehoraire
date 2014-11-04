@@ -1,4 +1,5 @@
 ActiveAdmin.register Site do
+  permit_params :name, :ville
 
 
   # See permitted parameters documentation:
