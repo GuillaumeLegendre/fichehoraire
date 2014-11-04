@@ -2,9 +2,16 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :redirect_to_sign_in
 
   private
-  
+
+  def redirect_to_sign_in
+    if request.fullpath == "/" && !current_user
+      redirect_to "/users/sign_in"
+    end
+  end
+
   #-> Prelang (user_login:devise)
   def require_user_signed_in
     unless user_signed_in?
