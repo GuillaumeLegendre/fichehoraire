@@ -1,4 +1,5 @@
 ActiveAdmin.register Client do
+  permit_params :name
 
 
   # See permitted parameters documentation:
