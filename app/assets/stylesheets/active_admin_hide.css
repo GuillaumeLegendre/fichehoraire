@@ -1,11 +1,11 @@
 .breadcrumb{display:none;}
 #filters_sidebar_section{display:none;}
-#current_user{display:none;}
+#current_user{display:none !important;}
 #index_footer{display:none;}
 .table_tools{display:none;}
-#dashboard{display:none;}
-#admin_comments{display:none;}
-#admin_users{display:none;}
+#dashboard{display:none !important;}
+#admin_comments{display:none !important;}
+#admin_users{display:none !important;}
 .col-selectable{display:none;}
 .col-id{display:none;}
 .col-reset_password_token{display:none;}
@@ -18,3 +18,19 @@
 .col-created_at{display:none;}
 .col-updated_at{display:none;}
 .col-actions{display:none;}
+.col-current_sign_in_at{display:none;}
+#footer{display:none;}
+.comments{display:none;}
+.row-created_at{display:none;}
+.row-updated_at{display:none;}
+.row-id{display:none;}
+.row-encrypted_password{display:none;}
+.row-reset_password_token{display:none;}
+.row-reset_password_sent_at{display:none;}
+.row-remember_created_at{display:none;}
+.row-sign_in_count{display:none;}
+.row-current_sign_in_at{display:none;}
+.row-last_sign_in_at{display:none;}
+.row-current_sign_in_ip{display:none;}
+.row-last_sign_in_ip{display:none;}
+body.show .action_items{display:none;}

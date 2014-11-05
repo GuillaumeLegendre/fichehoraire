@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'landings/index'
+  get 'landings/get_site'
+  get 'landings/get_mission'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
