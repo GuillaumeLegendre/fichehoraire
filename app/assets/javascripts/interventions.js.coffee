@@ -5,7 +5,10 @@
 $ ->
   $("#select_client").change ->
     $("#select_site, #select_mission").empty()
-    $.ajax(url: "/landings/get_site?client_id="+$("#select_client").val()).done (data) ->
+    $.ajax(url: "/interventions/get_site?client_id="+$("#select_client").val()).done (data) ->
+      if data.length != 0
+        o = new Option("Choisissez un site", "")
+        $("#select_site").append o
       data.forEach (site) ->
         o = new Option(site.name, site.id)
         $(o).html site.name
@@ -16,12 +19,8 @@ $ ->
 
   $("#select_site").change ->
     $("#select_mission").empty()
-    $.ajax(url: "/landings/get_mission?site_id="+$("#select_site").val()).done (data) ->
+    $.ajax(url: "/interventions/get_mission?site_id="+$("#select_site").val()).done (data) ->
       data.forEach (mission) ->
-        console.log "test"
-        console.log mission
-        console.log mission.name
-        console.log mission.id
         o = new Option(mission.name, mission.id)
         $(o).html mission.name
         $("#select_mission").append o

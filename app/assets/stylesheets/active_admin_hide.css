@@ -6,6 +6,7 @@
 #dashboard{display:none !important;}
 #admin_comments{display:none !important;}
 #admin_users{display:none !important;}
+#index_table_interventions{display:none !important;}
 .col-selectable{display:none;}
 .col-id{display:none;}
 .col-reset_password_token{display:none;}
@@ -34,3 +35,8 @@
 .row-current_sign_in_ip{display:none;}
 .row-last_sign_in_ip{display:none;}
 body.show .action_items{display:none;}
+#index_footer{display:none;}
+.admin_interventions #index_footer{display:block;}
+.admin_interventions .pagination_information{display:none;}
+.admin_interventions .action_item{display:none;}
+.blank_slate a{display:none;}

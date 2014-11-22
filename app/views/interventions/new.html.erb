@@ -1,0 +1,109 @@
+<%= form_for @intervention, :validate => true, html: {class: "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="exampleInputEmail1">client</label>
+    <div class="col-sm-6">
+      <select class="form-control" id="select_client">
+        <option value="">Choisissez un client</option>
+        <% @clients.each do |c| %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">site</label>
+    <div class="col-sm-6">
+      <select class="form-control" id="select_site">
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">mission</label>
+    <div class="col-sm-6">
+      <select class="form-control" id="select_mission" name="intervention[mission_id]">
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">date</label>
+    <div class="col-sm-6">
+      <input type="text" data-provide='datepicker' class="form-control" name="intervention[datetime]">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Nombre d'heure</label>
+    <div class="col-sm-6">
+      <!-- <input type="number" class="form-control" placeholder="ex: 3.5" min="0" step="any" name="intervention[nb_hour_h]"> -->
+
+      <select class="form-control col-sm-6" name="intervention[nb_hour_h]">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">Nombre de minute</label>
+    <div class="col-sm-6">
+      <select class="form-control" name="intervention[nb_hour_m]">
+        <option>0</option>
+        <option>0.25</option>
+        <option>0.50</option>
+        <option>0.75</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">panier</label>
+    <div class="col-sm-6">
+      <select class="form-control" name="intervention[panier]">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">zone</label>
+    <div class="col-sm-6">
+      <select class="form-control" name="intervention[zone]">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Commentaire</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" rows="3" name="intervention[comment]"></textarea>
+    </div>
+  </div>
+
+  <div class="col-sm-offset-2 col-sm-10">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+<% end %>

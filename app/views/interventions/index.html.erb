@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>mission</th>
+      <th>date</th>
+      <th>nombre d'heure</th>
+      <th>panier</th>
+      <th>zone</th>
+      <th>commentaire</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @interventions.each do |i| %>
+      <tr>
+        <td><%= Mission.find(i.mission_id).name %></td>
+        <td><%= i.datetime %></td>
+        <td><%= i.nb_hour %></td>
+        <td><%= i.panier %></td>
+        <td><%= i.zone %></td>
+        <td><%= i.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

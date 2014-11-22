@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'landings/index'
-  get 'landings/get_site'
-  get 'landings/get_mission'
+
+  get 'interventions/get_site'
+  get 'interventions/get_mission'
+  resources :interventions do
+  end
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landings#index'
+  root 'interventions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

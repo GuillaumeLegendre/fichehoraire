@@ -3,10 +3,23 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :redirect_to_sign_in
+  before_filter :crypt_password_new_user
 
   private
 
-  def redirect_to_sign_in
+  def crypt_password_new_user
+    if request.fullpath == "/admin/users"
+      if params
+        if params[:user]
+          if params[:user][:encrypted_password]
+            params[:user][:encrypted_password] = BCrypt::Password.create(params[:user][:encrypted_password])
+          end
+        end
+      end
+    end
+  end
+
+  def redirect_to_sign_in # TODO don't work because can go anywhere
     if request.fullpath == "/" && !current_user
       redirect_to "/users/sign_in"
     end
