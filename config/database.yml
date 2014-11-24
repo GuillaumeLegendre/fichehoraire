@@ -82,4 +82,4 @@ production:
   <<: *default
   database: fichehoraire_production
   username: fichehoraire
-  password: <%= ENV['FICHEHORAIRE_DATABASE_PASSWORD'] %>
+  password: 123pcproximite #<%= ENV['FICHEHORAIRE_DATABASE_PASSWORD'] %>

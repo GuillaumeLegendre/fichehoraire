@@ -1,5 +1,12 @@
 <%= form_for @intervention, :validate => true, html: {class: "form-horizontal"} do |f| %>
   <div class="form-group">
+    <label class="control-label col-sm-2">date</label>
+    <div class="col-sm-6">
+      <input type="text" data-provide='datepicker' data-date-format="dd-mm-yyyy" class="form-control" name="intervention[datetime]" value="<%= Time.now.strftime("%d-%m-%Y") %>">
+    </div>
+  </div>
+
+  <div class="form-group">
     <label class="control-label col-sm-2" for="exampleInputEmail1">client</label>
     <div class="col-sm-6">
       <select class="form-control" id="select_client">
@@ -24,13 +31,6 @@
     <div class="col-sm-6">
       <select class="form-control" id="select_mission" name="intervention[mission_id]">
       </select>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label col-sm-2">date</label>
-    <div class="col-sm-6">
-      <input type="text" data-provide='datepicker' class="form-control" name="intervention[datetime]">
     </div>
   </div>
 

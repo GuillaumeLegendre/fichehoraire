@@ -16,7 +16,7 @@ ActiveAdmin.register Intervention do
   # end
 
   csv do
-    column :datetime
+    column ("date") {|inter| inter.datetime.strftime("%Y/%m/%d")}
     column("user") { |inter| inter.user.email }
     column("client") { |inter| inter.mission.site.client.name }
     column("site") { |inter| inter.mission.site.name }
