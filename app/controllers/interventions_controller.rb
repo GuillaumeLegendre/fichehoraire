@@ -2,7 +2,7 @@ class InterventionsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @interventions = Intervention.where(user_id: current_user.id)
+    @interventions = Intervention.where(user_id: current_user.id).order('name ASC')
   end
 
   def new
@@ -28,7 +28,7 @@ class InterventionsController < ApplicationController
   end
 
   def get_site
-    @sites = Site.where(client_id: params[:client_id])
+    @sites = Site.where(client_id: params[:client_id]).order('name ASC')
     render :json => @sites
   end
 
