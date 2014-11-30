@@ -2,12 +2,12 @@ class InterventionsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @interventions = Intervention.where(user_id: current_user.id).order('name ASC')
+    @interventions = Intervention.where(user_id: current_user.id)
   end
 
   def new
     @intervention = Intervention.new
-    @clients = Client.all
+    @clients = Client.all.order('name ASC')
   end
 
   def create
